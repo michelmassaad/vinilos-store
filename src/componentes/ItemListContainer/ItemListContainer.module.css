@@ -1,0 +1,127 @@
+.contenedor {
+    padding: 2rem 0;
+}
+
+.titulo {
+    text-align: center;
+    color: #C5A059;
+    letter-spacing: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor de las categorías */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Estilo de cada botón de categoría */
+.btnCategoria {
+  background: transparent;
+  border: 1px solid rgba(244, 241, 234, 0.2);
+  color: var(--color-papel, #F9F7F2);
+  padding: 8px 20px;
+  border-radius: 50px; /* Bordes redondeados para que parezcan "píldoras" (tags) */
+  font-family: var(--fuente-texto, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnCategoria:hover {
+  border-color: var(--color-oro, #C5A059);
+  color: var(--color-oro, #C5A059);
+  background: rgba(197, 160, 89, 0.05);
+}
+
+/* Contenedor del buscador */
+.formularioBusqueda {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 auto 40px auto;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+/* El campo de texto */
+.inputBuscador {
+  flex: 1;
+  background-color: rgba(244, 241, 234, 0.03); /* Fondo casi transparente */
+  border: 1px solid rgba(197, 160, 89, 0.3); /* Borde dorado sutil */
+  color: var(--color-papel, #F9F7F2);
+  padding: 14px 20px;
+  border-radius: 4px; /* Un poco más cuadrado y moderno */
+  font-family: var(--fuente-texto, 'Inter', sans-serif);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al hacer clic en el input */
+.inputBuscador:focus {
+  border-color: var(--color-oro, #C5A059);
+  background-color: rgba(244, 241, 234, 0.06);
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.15); /* Resplandor dorado */
+}
+
+.inputBuscador::placeholder {
+  color: rgba(244, 241, 234, 0.3);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* El botón de acción */
+.botonBuscar {
+  background-color: var(--color-oro, #C5A059);
+  color: var(--color-fondo, #0A0A0A);
+  border: none;
+  padding: 0 30px;
+  border-radius: 4px;
+  font-family: var(--fuente-titulo, 'Cormorant Garamond', serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.botonBuscar:hover {
+  background-color: #d4b371; /* Un dorado un poco más brillante */
+  transform: translateY(-2px); /* Pequeña elevación al pasar el mouse */
+}
+
+.botonBuscar:active {
+  transform: translateY(1px); /* Sensación de clic real */
+}
+
+/* El botón de volver (por si lo necesitas ajustar) */
+.contenedorReset {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.btnReset {
+  background: transparent;
+  border: 1px solid var(--color-oro, #C5A059);
+  color: var(--color-oro, #C5A059);
+  padding: 10px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: var(--fuente-texto, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btnReset:hover {
+  background: rgba(197, 160, 89, 0.1);
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
+}

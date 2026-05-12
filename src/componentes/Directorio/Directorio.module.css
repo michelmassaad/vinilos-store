@@ -1,0 +1,70 @@
+.seccionDirectorio {
+  padding: 60px;
+  border-top: 0.5px solid rgba(244, 241, 234, 0.1);
+  text-align: center;
+  background-color: var(--color-fondo, #0A0A0A);
+}
+
+.seccionDirectorio h3 {
+  color: var(--color-oro, #C5A059);
+  font-family: var(--fuente-titulo, 'Cormorant Garamond', serif);
+  letter-spacing: 4px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
+.grilla {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  background: rgba(244, 241, 234, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  padding: 30px 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  border-color: rgba(197, 160, 89, 0.4);
+}
+
+.tarjeta img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid var(--color-oro, #C5A059);
+  padding: 3px;
+}
+
+.tarjeta h4 {
+  color: var(--color-papel, #F9F7F2);
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  font-family: var(--fuente-titulo, 'Cormorant Garamond', serif);
+}
+
+.puesto {
+  color: var(--color-oro, #C5A059);
+  font-size: 0.7rem;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.email {
+  color: rgba(244, 241, 234, 0.5);
+  font-size: 0.75rem;
+  margin: 0;
+  font-weight: 300;
+}

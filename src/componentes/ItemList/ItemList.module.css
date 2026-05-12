@@ -1,0 +1,9 @@
+.grilla {
+  display: flex;
+  flex-wrap: wrap;       /* Permite que bajen a la siguiente línea si no entran */
+  justify-content: center; /* Centra las tarjetas perfectamente */
+  gap: 40px;             /* Espacio entre discos */
+  max-width: 1200px;     /* Evita que se separen demasiado en monitores gigantes */
+  margin: 0 auto;
+  padding: 20px;
+}

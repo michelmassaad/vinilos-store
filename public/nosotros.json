@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Michel Massaad",
+    "puesto": "Fundador & Curador",
+    "email": "michel@vinilosstore.com",
+    "foto": "https://api.dicebear.com/7.x/notionists/svg?seed=Michel&backgroundColor=transparent"
+  },
+  {
+    "id": 2,
+    "nombre": "Silvia",
+    "puesto": "Product Owner",
+    "email": "silvia@vinilosstore.com",
+    "foto": "https://api.dicebear.com/7.x/notionists/svg?seed=Silvia&backgroundColor=transparent"
+  },
+  {
+    "id": 3,
+    "nombre": "Facu",
+    "puesto": "Ingeniero de Sonido",
+    "email": "facu@vinilosstore.com",
+    "foto": "https://api.dicebear.com/7.x/notionists/svg?seed=Facu&backgroundColor=transparent"
+  }
+]

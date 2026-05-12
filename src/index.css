@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=JetBrains+Mono:wght@300&display=swap');
+
+:root {
+  --color-carbon: #0D0D0D;  /* Fondo oscuro principal */
+  --color-marfil: #F4F1EA;  /* Textos principales */
+  --color-oro: #C5A059;     /* Acentos y detalles */
+  --fuente-titulo: 'Cormorant Garamond', serif;
+  --fuente-texto: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-carbon);
+  color: var(--color-marfil);
+  font-family: var(--fuente-texto);
+  -webkit-font-smoothing: antialiased;
+  /* Textura súper sutil para darle calidez analógica */
+  
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+/* Reemplazá tu body actual en index.css por este: */
+body {
+  margin: 0;
+  background-color: var(--color-carbon);
+  /* Degradado sutil + la textura que ya tenías */
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.05) 0%, transparent 70%),
+    url("https://www.transparenttextures.com/patterns/stardust.png");
+  color: var(--color-marfil);
+  font-family: var(--fuente-texto);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  margin: 0;
+}
+

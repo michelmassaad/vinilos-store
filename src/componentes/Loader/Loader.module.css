@@ -1,0 +1,68 @@
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* Ocupa la mitad de la pantalla para quedar bien centrado */
+  gap: 24px;
+}
+
+/* EL DISCO DE VINILO */
+.viniloGiratorio {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #111; /* Color del vinilo */
+  border: 4px solid #222; /* Borde para simular los surcos */
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(197, 160, 89, 0.1);
+  animation: girar 1.2s linear infinite; /* Animación continua */
+}
+
+/* LA ETIQUETA DORADA DEL CENTRO */
+.viniloGiratorio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-oro, #C5A059);
+  border-radius: 50%;
+}
+
+/* EL AGUJERO DEL CENTRO */
+.viniloGiratorio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-carbon, #0A0A0A);
+  border-radius: 50%;
+}
+
+/* EL TEXTO QUE TITILA */
+.loaderText {
+  font-family: var(--fuente-texto, monospace);
+  color: var(--color-oro, #C5A059);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+  animation: titilar 1.5s ease-in-out infinite;
+}
+
+/* ANIMACIONES KEYFRAMES */
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes titilar {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}

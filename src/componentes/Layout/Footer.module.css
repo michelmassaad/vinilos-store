@@ -1,0 +1,16 @@
+.footer {
+  padding: 40px 40px;
+  border-top: 0.5px solid rgba(244, 241, 234, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  color: rgba(244, 241, 234, 0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+}

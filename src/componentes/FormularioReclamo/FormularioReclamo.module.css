@@ -1,0 +1,101 @@
+.seccionFormulario {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(244, 241, 234, 0.02);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 4px;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.encabezado h2 {
+  color: var(--color-oro, #C5A059);
+  font-family: var(--fuente-titulo, 'Cormorant Garamond', serif);
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.encabezado p {
+  color: rgba(244, 241, 234, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.grupoInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grupoInput label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-oro, #C5A059);
+  font-weight: 600;
+}
+
+.input, .textarea {
+  background-color: rgba(244, 241, 234, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: var(--color-marfil, #F9F7F2);
+  padding: 14px;
+  font-family: var(--fuente-texto, 'Inter', sans-serif);
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--color-oro, #C5A059);
+  background-color: rgba(244, 241, 234, 0.06);
+}
+
+.inputFile {
+  color: rgba(244, 241, 234, 0.7);
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+.botonEnviar {
+  margin-top: 10px;
+  background-color: var(--color-oro, #C5A059);
+  color: var(--color-carbon, #0A0A0A);
+  border: none;
+  padding: 16px;
+  font-family: var(--fuente-titulo, serif);
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botonEnviar:hover:not(:disabled) {
+  background-color: #d4b371;
+  transform: translateY(-2px);
+}
+
+.botonEnviar:disabled {
+  background-color: rgba(197, 160, 89, 0.3);
+  color: rgba(244, 241, 234, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
