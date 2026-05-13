@@ -43,7 +43,7 @@ export function ItemDetailContainer() {
           const pistas = item.trackCount || 'múltiples';
 
           // 2. Armamos UN solo párrafo inyectando las variables
-          const descripcionDinamica = `"${item.collectionName || item.trackName}" es un trabajo discográfico interpretado por ${item.artistName}, publicado originalmente en el año ${anio}. Clasificado dentro del género ${genero}, esta edición de catálogo (origen: ${pais}) incluye un tracklist completo de ${pistas} pistas. El prensaje en vinilo respeta el rango dinámico y la mezcla de audio de la grabación original.`;
+          const descripcionDinamica = `"${item.collectionName || item.trackName}" es un trabajo discográfico interpretado por ${item.artistName}, publicado originalmente en el año ${anio}. Clasificado dentro del género ${genero}, esta edición de catálogo (origen: ${pais}) incluye un tracklist completo de ${pistas} pistas.`;
 
           // 3. Lo guardamos en el estado
           setProducto({
