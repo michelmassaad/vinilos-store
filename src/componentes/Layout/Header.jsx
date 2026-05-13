@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom'; // 1. Sumamos NavLink a los imports
 
 const CartIcon = () => (
   <svg 
@@ -23,18 +23,40 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logoGroup}>
-        <a className={styles.navLi}><Link to="/" className={styles.logo}>
+        {/* 2. Corregido: Quitamos la etiqueta <a> externa. El logo usa Link porque no necesita marcarse como activo */}
+        <Link to="/" className={styles.logo}>
           <h1>VINILOS STORE</h1>
           <span className={styles.tagline}>Sonido Orgánico</span>
         </Link>
-        </a>
       </div>
+      
       <nav>
         <ul className={styles.nav}>
-          <li className={styles.navLi} ><Link to="/">Inicio</Link></li>
-          <li className={styles.navLi} ><Link to="/productos">Colección</Link></li>
-          <li className={styles.navLi} ><Link to="/contacto">Contacto</Link></li>
-          <li className={`${styles.navLi} ${styles.cartButton}`} ><CartIcon /><Link to="/carrito">Carrito (0)</Link></li>
+          {/* 3. Reemplazamos Link por NavLink en el menú. La función de flecha decide qué clase CSS ponerle */}
+          <li className={styles.navLi}>
+            <NavLink to="/" className={({ isActive }) => isActive ? styles.linkActivo : styles.linkNormal}>
+              Inicio
+            </NavLink>
+          </li>
+          
+          <li className={styles.navLi}>
+            <NavLink to="/productos" className={({ isActive }) => isActive ? styles.linkActivo : styles.linkNormal}>
+              Colección
+            </NavLink>
+          </li>
+          
+          <li className={styles.navLi}>
+            <NavLink to="/contacto" className={({ isActive }) => isActive ? styles.linkActivo : styles.linkNormal}>
+              Contacto
+            </NavLink>
+          </li>
+          
+          <li className={`${styles.navLi} ${styles.cartButton}`}>
+            {/* 4. Envolvemos el icono de carrito y el texto en el mismo NavLink */}
+            <NavLink to="/carrito" className={({ isActive }) => isActive ? styles.linkActivo : styles.linkNormal}>
+              <CartIcon /> Carrito (0)
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
