@@ -36,6 +36,16 @@ export function ItemDetailContainer() {
           const precioSugerido = item.collectionPrice || item.trackPrice || 15;
           const precioCalculado = Math.floor(precioSugerido * 1500); // Sincronizado a la perfección
 
+          // 1. Extraemos los datos útiles de forma rápida (con valores por defecto por si alguno falla)
+          const anio = item.releaseDate ? item.releaseDate.substring(0, 4) : 'su época';
+          const genero = item.primaryGenreName || 'su género';
+          const pais = item.country || 'importación';
+          const pistas = item.trackCount || 'múltiples';
+
+          // 2. Armamos UN solo párrafo inyectando las variables
+          const descripcionDinamica = `"${item.collectionName || item.trackName}" es un trabajo discográfico interpretado por ${item.artistName}, publicado originalmente en el año ${anio}. Clasificado dentro del género ${genero}, esta edición de catálogo (origen: ${pais}) incluye un tracklist completo de ${pistas} pistas. El prensaje en vinilo respeta el rango dinámico y la mezcla de audio de la grabación original.`;
+
+          // 3. Lo guardamos en el estado
           setProducto({
             id: item.trackId || item.collectionId,
             nombre: item.trackName || item.collectionName,
@@ -44,7 +54,9 @@ export function ItemDetailContainer() {
             stock: 10,
             portada: item.artworkUrl100.replace('100x100bb', '600x600bb'),
             audio: item.previewUrl,
-            descripcion: `Experimenta el sonido analógico puro de ${item.artistName} con esta edición especial en vinilo de alto gramaje.`
+            
+            // Asignamos nuestra variable simple acá
+            descripcion: descripcionDinamica 
           });
         }
       } catch (error) {
