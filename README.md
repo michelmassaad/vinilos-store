@@ -1,110 +1,165 @@
-¡Entendido! Si vas a presentar esto como estudiante de término en la UTN y como desarrollador enfocado en Full-Stack, el README no puede ser solo una lista de comandos. Tiene que demostrar que entendés de **arquitectura de software, manejo de asincronismo, experiencia de usuario (UX) y buenas prácticas de código**.
+# 🎵 Vinilos Store
 
-Este README está redactado como lo haría un desarrollador Semi-Senior o Senior para un repositorio público en su portfolio. Muestra dominio técnico sin sonar arrogante.
+> **Sonido Orgánico** — Tu tienda de vinilos online, impulsada por la API de iTunes.
 
-Copiá exactamente esto. Notarás que agregué una sección de "Arquitectura" y "Roadmap" (lo que le vas a agregar después, como el carrito), lo cual a los reclutadores y profesores les encanta ver porque demuestra que pensás a futuro.
-
----
-
-```markdown
-# 📀 Vinilos Store - E-Commerce SPA
-
-![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-Bundler-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-![React Router](https://img.shields.io/badge/React_Router-v6-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![CSS Modules](https://img.shields.io/badge/CSS_Modules-Component_Scoped-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-
-> 🔗 **[Ver Despliegue en Vivo](https://vinilos-store.vercel.app)**
-
-**Vinilos Store** es una Single Page Application (SPA) desarrollada en React. Emula la experiencia de una tienda boutique de discos analógicos, destacándose por su diseño inmersivo, integración de APIs de terceros y un manejo riguroso de estados asíncronos.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite)
+![React Router](https://img.shields.io/badge/React_Router-7-CA4245?style=flat-square&logo=react-router)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
 ---
 
-## 🎯 Objetivo del Proyecto
+## 🌐 Demo en vivo
 
-El proyecto fue concebido para demostrar habilidades sólidas en el desarrollo Frontend moderno, enfocándose en la arquitectura basada en componentes, el enrutamiento declarativo y la gestión eficiente de efectos secundarios y consumo de APIs.
-
-## ✨ Funcionalidades Core & Soluciones Técnicas
-
-### 1. Consumo y Normalización de API Externa
-* **Integración con iTunes Search API:** Obtención en tiempo real de catálogos musicales, portadas en alta resolución y muestras de audio.
-* **Evasión de CORS:** Implementación de un proxy HTTP (`api.codetabs.com`) para superar las restricciones de CORS nativas del navegador durante las peticiones `fetch`.
-* **Mapeo de Datos (Data Parsing):** Capa de adaptación que normaliza las respuestas inconsistentes de la API (`collectionPrice` vs `trackPrice`) para garantizar una estructura de datos predecible en los componentes de la vista.
-
-### 2. Experiencia de Usuario (UX) y Control de Estado
-* **Mitigación de FOUC (Flash of Unstyled Content):** Uso avanzado de `Promise.all` para paralelizar el fetch de datos con un temporizador forzado, garantizando que el *Loader* animado se muestre el tiempo suficiente para una transición elegante.
-* **Reproducción Segura:** Reproductor de audio nativo de HTML5 inyectado dinámicamente con restricciones (`controlsList="nodownload noplaybackrate"`) para proteger la propiedad intelectual y ocultar opciones no deseadas del navegador.
-
-### 3. Diseño y Arquitectura CSS
-* **Component-Scoped Styles:** Utilización exclusiva de **CSS Modules**, eliminando el riesgo de colisión de clases y manteniendo una especificidad baja y mantenible.
-* **Diseño Premium (Dark Theme):** Interfaz fluida basada en Flexbox y CSS Grid, con interacciones complejas en estado `:hover` (filtros *grayscale*, transformaciones de escala y sombras dinámicas).
+[![Ver en Vercel](https://img.shields.io/badge/Ver%20en%20vivo-Vercel-black?style=for-the-badge&logo=vercel)](https://vinilos-store.vercel.app)
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📖 Descripción
 
-La arquitectura de carpetas sigue el principio de separación de responsabilidades (SoC), manteniendo los componentes lógicos separados de los presentacionales:
+**Vinilos Store** es una aplicación web de e-commerce de discos de vinilo construida con React. Consume la **iTunes Search API** en tiempo real para mostrar un catálogo dinámico de música, permitiendo a los usuarios explorar, buscar y ver el detalle de cada disco, con precios convertidos a pesos argentinos.
 
-```text
-src/
-├── componentes/
-│   ├── Item/                   # Componente presentacional de la tarjeta
-│   ├── ItemList/               # Grilla de productos
-│   ├── ItemListContainer/      # Lógica de fetch y filtrado de catálogo
-│   ├── ItemDetail/             # Presentación del detalle del producto
-│   ├── ItemDetailContainer/    # Lógica de fetch individual
-│   ├── Loader/                 # Componente visual de carga (Vinilo giratorio)
-│   └── Layout/                 # Navbar y Footer globales
-├── App.jsx                     # Configuración de React Router DOM
-└── main.jsx                    # Entry point de la aplicación
+---
 
+## ✨ Funcionalidades
+
+- 🔍 **Búsqueda en tiempo real** — Buscá artistas, álbumes o géneros directamente desde la API de iTunes.
+- 🎸 **Filtro por categorías** — Navegá rápidamente por Rock, Jazz, Pop, Electronic y Blues.
+- 📀 **Vista de detalle** — Página individual por producto con portada en alta resolución, precio y descripción.
+- 🎧 **Preview de audio** — Vista preparada para reproducción de fragmentos de canciones.
+- 📋 **Formulario de reclamos** — Sistema de soporte con adjunto de imagen para reportar problemas con pedidos.
+- ⏳ **Loader animado** — Experiencia de carga fluida con tiempo mínimo garantizado.
+- 🛒 **Carrito** _(en desarrollo)_ — Estructura base implementada y accesible desde el header.
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
+vinilos-store/
+├── public/
+│   ├── favicon.svg
+│   ├── icons.svg
+│   └── nosotros.json          # Datos del equipo
+├── src/
+│   ├── componentes/
+│   │   ├── Directorio/        # Directorio del equipo
+│   │   ├── FormularioReclamo/ # Formulario de soporte (UI)
+│   │   ├── FormularioReclamoContainer/ # Lógica del formulario
+│   │   ├── Item/              # Tarjeta compacta de producto
+│   │   ├── ItemDetail/        # Vista de detalle (UI)
+│   │   ├── ItemDetailContainer/ # Lógica del detalle
+│   │   ├── ItemList/          # Grilla de productos
+│   │   ├── ItemListContainer/ # Lógica del catálogo y búsqueda
+│   │   ├── Layout/            # Header, Footer y Layout global
+│   │   ├── Loader/            # Componente de carga
+│   ├── assets/
+│   ├── App.jsx                # Definición de rutas
+│   ├── main.jsx               # Punto de entrada
+│   └── index.css
+├── index.html
+├── vite.config.js
+└── package.json
 ```
 
 ---
 
-## 🚀 Despliegue Local
+## 🛣️ Rutas
 
-Para auditar o ejecutar el código en un entorno de desarrollo local:
+| Ruta            | Descripción                                          |
+| --------------- | ---------------------------------------------------- |
+| `/`             | Inicio — muestra discos destacados de _Classic Rock_ |
+| `/productos`    | Catálogo completo                                    |
+| `/producto/:id` | Detalle de un disco específico                       |
+| `/contacto`     | Formulario de soporte y reclamos                     |
+| `/carrito`      | Carrito de compras _(en desarrollo)_                 |
+| `*`             | Página 404 personalizada                             |
 
-1. Clonar el repositorio:
-```bash
-git clone [https://github.com/michelmassaad/vinilos-store.git](https://github.com/michelmassaad/vinilos-store.git)
+---
+
+## 🔌 API
+
+La aplicación consume la **iTunes Search API** para obtener datos de música en tiempo real.
 
 ```
+# Búsqueda por término
+https://itunes.apple.com/search?term={query}&entity=song&limit=24
 
+# Lookup por ID (detalle)
+https://itunes.apple.com/lookup?id={id}
+```
 
-2. Instalar las dependencias de Node:
+> Las peticiones se realizan a través del proxy **[CodeTabs](https://api.codetabs.com/v1/proxy)** para resolver restricciones de CORS.
+
+**Campos utilizados de la respuesta:**
+
+| Campo iTunes                     | Campo en la app            |
+| -------------------------------- | -------------------------- |
+| `trackName` / `collectionName`   | Nombre del disco           |
+| `artistName`                     | Artista                    |
+| `artworkUrl100` (→ `600x600bb`)  | Portada en alta resolución |
+| `collectionPrice` / `trackPrice` | Precio base (×1500 → ARS)  |
+| `previewUrl`                     | Audio de preview           |
+| `trackId` / `collectionId`       | ID único del producto      |
+
+---
+
+## 🚀 Instalación y uso
+
+### Prerrequisitos
+
+- [Node.js](https://nodejs.org/) v18 o superior
+- npm v9 o superior
+
+### Pasos
+
 ```bash
+# 1. Clonar el repositorio
+git clone https://github.com/michelmassaad/vinilos-store.git
 cd vinilos-store
+
+# 2. Instalar dependencias
 npm install
 
-```
-
-
-3. Inicializar el entorno de desarrollo mediante Vite:
-```bash
+# 3. Iniciar el servidor de desarrollo
 npm run dev
-
 ```
 
+La aplicación estará disponible en `http://localhost:5173`.
 
+### Scripts disponibles
+
+```bash
+npm run dev      # Servidor de desarrollo con hot-reload
+npm run build    # Build de producción en /dist
+npm run preview  # Vista previa del build de producción
+npm run lint     # Análisis estático del código con ESLint
+```
 
 ---
 
-## 🛣️ Roadmap (Próximas Implementaciones)
+## 🧰 Stack Tecnológico
 
-* [ ] Implementación de `React Context` para la gestión global del estado del Carrito de Compras.
-* [ ] Integración con Backend as a Service (BaaS) como Firebase/Firestore para el guardado persistente de órdenes de compra.
-* [ ] Implementación de *SweetAlert2* o *Toastify* para reemplazar las alertas nativas del navegador.
+| Tecnología Uso                               | Uso
+| -------------------------------------------- | ----------------------------------- |
+| [React](https://react.dev/)                  | Biblioteca principal de UI          |
+| [React Router DOM](https://reactrouter.com/) | Enrutamiento client-side (SPA)      |
+| [Vite](https://vite.dev/)                    | Bundler y servidor de desarrollo    |
+| [ESLint](https://eslint.org/)                | Linting y calidad de código         |
+| iTunes Search API                            | Fuente de datos del catálogo        |
+| CSS Modules                                  | Estilos encapsulados por componente |
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Implementar el carrito de compras con contexto global
+- [ ] Persistencia del carrito con `localStorage`
 
 ---
 
 ## 👨‍💻 Autor
 
-**Michel Massaad**
+Michel Massaad
 
-* GitHub: [@michelmassaad](https://github.com/michelmassaad)
-* LinkedIn: [Michel Massaad](https://www.linkedin.com/in/michel-massaad/)
-
-```
+- GitHub: https://github.com/michelmassaad
+- LinkedIn: https://www.linkedin.com/in/michel-massaad/
