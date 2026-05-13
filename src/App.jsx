@@ -3,10 +3,14 @@ import { Layout } from './componentes/Layout/Layout';
 import { ItemListContainer } from './componentes/ItemListContainer/ItemListContainer';
 import { FormularioReclamoContainer } from './componentes/FormularioReclamoContainer/FormularioReclamoContainer';
 import { ItemDetailContainer } from './componentes/ItemDetailContainer/ItemDetailContainer';
+import { ScrollToTop } from './componentes/ScroolToTop/ScroolToTop';
 
 function App() {
   return (
     // Routes agrupa todas nuestras rutas
+    <>
+      {/* componente para que el scroll vaya arriba al cambiar de ruta */}
+      <ScrollToTop />
     <Routes>
       {/* 3. Ruta Padre: Envuelve a todas con el Layout (Header y Footer) */}
       <Route element={<Layout />}>
@@ -24,6 +28,7 @@ function App() {
         
       </Route>
     </Routes>
+    </>
   );
 }
 
