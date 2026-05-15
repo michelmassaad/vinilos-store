@@ -125,3 +125,66 @@
   background: rgba(197, 160, 89, 0.1);
   box-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
 }
+
+
+/* --- ESTILOS DEL MENSAJE DE ERROR --- */
+.contenedorError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  /* Un fondo muy sutil para enmarcar el error */
+  background-color: rgba(244, 241, 234, 0.03); 
+  border: 1px dashed rgba(197, 160, 89, 0.3); /* Borde punteado dorado */
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.iconoError {
+  margin-bottom: 20px;
+  opacity: 0.8;
+  /* Animación suave para que el ícono gire levemente como un disco fallando */
+  animation: vibrar 2s infinite linear;
+}
+
+.tituloError {
+  font-family: 'Cormorant Garamond', serif;
+  color: #F9F7F2;
+  font-size: 2rem;
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+}
+
+.textoError {
+  color: rgba(244, 241, 234, 0.7);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+  line-height: 1.5;
+}
+
+.btnVolverError {
+  background-color: transparent;
+  color: #C5A059;
+  border: 1px solid #C5A059;
+  padding: 12px 30px;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnVolverError:hover {
+  background-color: #C5A059;
+  color: #1A1A1A; /* Texto oscuro para que resalte al pasar el mouse */
+}
+
+/* Pequeño detalle de animación para el ícono */
+@keyframes vibrar {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}

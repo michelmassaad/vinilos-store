@@ -42,7 +42,7 @@ try {
         const data = await response.json(); 
         
         if (data.results.length === 0) {
-          throw new Error(`No encontramos prensajes disponibles para "${terminoActivo}".`);
+          throw new Error(`No encontramos ningún disco disponible para "${terminoActivo}".`);
         }
 
         // Mapeamos los resultados de iTunes...
@@ -149,12 +149,35 @@ const manejarBusqueda = (e) => {
         ))}
       </div>
 
-    {/* 2. REEMPLAZO DEL ESTADO CARGANDO POR EL COMPONENTE LOADER */}
+   {/* 2. REEMPLAZO DEL ESTADO CARGANDO POR EL COMPONENTE LOADER */}
       {cargando ? (
-        // Pasamos un mensaje personalizado al Loader
         <Loader mensaje="Cargando los discos..." />
       ) : error ? (
-        <div className={styles.mensajeError}>{error}</div>
+        
+        // --- NUEVO COMPONENTE DE ERROR ---
+        <div className={styles.contenedorError}>
+          <div className={styles.iconoError}>
+            {/* Un ícono de disco/vinilo estilizado para mantener la temática */}
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#C5A059" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+              <line x1="12" y1="9" x2="12" y2="9.01"></line>
+            </svg>
+          </div>
+          <h3 className={styles.tituloError}>Error al cargar los discos...</h3>
+          <p className={styles.textoError}>{error}</p>
+          <button 
+            onClick={() => {
+              limpiarBusqueda();
+              setTerminoInicial();
+            }} 
+            className={styles.btnVolverError}
+          >
+            VOLVER A INICIO
+          </button>
+        </div>
+        // ----------------------------------
+
       ) : (
         <ItemList productos={productos} />
       )}
