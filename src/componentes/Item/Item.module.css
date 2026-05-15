@@ -61,6 +61,13 @@
   color: var(--color-marfil);
   margin: 0;
   line-height: 1.2;
+  
+  /* --- MAGIA PARA LIMITAR A 2 LÍNEAS --- */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Máximo de renglones permitidos */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .estrella {
@@ -80,6 +87,11 @@
   margin-bottom: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  /* --- MAGIA PARA LIMITAR A 1 LÍNEA ESTRICTA --- */
+  white-space: nowrap;       /* Prohíbe que el texto baje al siguiente renglón */
+  overflow: hidden;          /* Oculta todo lo que se salga de la caja */
+  text-overflow: ellipsis;   /* Le agrega los "..." al final */
 }
 
 .etiquetas {
